@@ -1,0 +1,18 @@
+{{ define "main" }}
+  <div class="">
+    <article class="">
+      <header>
+        <p class="text-2xl text-white">
+          {{ humanize .Section | upper  }}
+        </p>
+        <h1 class="text-white">
+          {{ .Title }}
+        </h1>
+      </header>
+      <div class="">
+        {{ .Content }}
+        {{ partial "people.html" . }}
+      </div>
+    </article>
+  </div>
+{{ end }}

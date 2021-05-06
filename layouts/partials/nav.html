@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+  <a class="navbar-brand" href="/">
+    <img src="{{ "img/logo-small.png" | relURL }}" />
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampl
+eDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigati
+on">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="flex-grow w-16"></div>
+  <div>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="mr-auto navbar-nav">
+      {{ $current := . }}
+      {{ range .Site.Menus.main }}
+        {{ $topLevel := replace .URL "/" "" }}
+        {{ $active := eq $current.RelPermalink .URL | or (eq $current.Type $topLevel) }}
+        {{ $active_attr := "" }}
+        {{ if $active }}
+          {{ $active_attr = "active" }}
+        {{ end }}
+
+        {{ if .HasChildren }}
+        <li class="nav-item dropdown {{ $active_attr }}">
+          <a class="nav-link dropdown-toggle" href="#" id={{ .Name }} data-toggle="dropdown" aria- haspopup="true"
+            aria-expanded="false">{{ .Name }}</a>
+          <div class="dropdown-menu" aria-labelledby={{ .Name }}>
+            {{ range .Children }}
+            <a class="dropdown-item" href="{{ .URL }}">{{ .Name }}</a>
+            {{ end }}
+          </div>
+        </li>
+        {{ else }}
+        <li class="nav-item {{ $active_attr }}">
+          <a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
+        </li>
+        {{end}}
+      {{end}}
+    </ul>
+  </div>
+  </div>
+<nav>

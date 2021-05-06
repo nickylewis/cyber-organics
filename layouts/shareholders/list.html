@@ -1,0 +1,17 @@
+{{ define "main" }}
+  <div class="flex-l mt2 mw8 center">
+    <article class="center cf pv5 ph3 ph4-ns mw7">
+      <div class="nested-copy-line-height lh-copy f4 nested-links nested-img mid-gray">
+        <div class="flex flex-col items-center w-full ml-auto mr-auto">
+                <form id="shareholder_login" action="" class="space-y-6">
+                    <div class="flex flex-col mt-2 space-y-3 w-60">
+                    <input type="text" id="login" class="rounded border-3" name="login" placeholder="  login">
+                    <input type="password" id="password" class="rounded border-3" name="password" placeholder="  password" required>
+                    </div>
+                    <input type="submit" class="w-24 px-4 py-1 font-light tracking-wider text-white bg-blue-800 rounded hover:bg-blue-600" onclick="submitLogin()" value="Log In">
+                  </form>
+        </div>
+      </div>
+    </article>
+  </div>
+{{ end }}

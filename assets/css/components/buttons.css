@@ -1,0 +1,32 @@
+
+.btn-indigo {
+    @apply px-4 py-2 font-semibold text-white transition duration-500 transform scale-95 bg-indigo-500 rounded-lg shadow-md hover:scale-100 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75 ;
+}
+
+
+.activebutton {
+    @apply bg-red-500 hover:bg-red-700;
+}
+
+
+
+.nav-item .child {
+    position:absolute;
+    opacity: 0;
+}
+
+.nav-item:hover .child {
+    position: relative;
+    animation: fadeIn 1s;
+    @apply bg-green-500
+}
+
+@keyframes fadeIn {
+    from {
+         opacity: 0;
+    }
+
+    to {
+         opacity: 1;
+    }
+}

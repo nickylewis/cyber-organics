@@ -1,0 +1,28 @@
+
+
+
+<section>
+    <div class="home-carousel">
+        <div class="dark-mask"></div>
+        <div class="container p-24">
+            <div class="owl-theme owl-carousel">
+                {{ range sort .Site.Data.carousel "weight" }}
+                <div>
+                    <div class="flex flex-row flex-grow">
+                        <div class="flex flex-col">
+                            <div class="text-5xl text-white">{{ .title }}</div>
+                            <div class="flex-grow h-16"></div>
+                            <div class="text-lg text-white">{{ .description | safeHTML }}</div>
+                        </div>
+                        <div class="flex-grow w-16"></div>
+                        <div>
+                            <img src="{{ .image }}" alt="">
+                        </div>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+            <!-- /.project owl-slider -->
+        </div>
+    </div>
+</section>

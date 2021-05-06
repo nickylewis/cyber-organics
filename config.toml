@@ -1,0 +1,55 @@
+baseURL = "https://example.org"
+
+#theme = "ananke"
+# disableKinds = ["page", "section", "taxonomy", "term"]
+
+sectionPagesMenu = "main"
+pluralizelisttitles = false
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = "0.75.0"
+
+[build]
+# Used by PurgeCSS
+writeStats = true
+
+[[menu.main]]
+  url = "/culture"
+  name = "culture"
+  identifier = "culture"
+  weight = 40
+
+
+[[menu.main]]
+  url = "/people/"
+  identifier = "people"
+  name = "people"
+  weight = 20
+
+[[menu.main]]
+  url = "/people/leadership/"
+  name = "leadership"
+  parent = "people"
+  weight = 20
+
+
+[[menu.main]]
+  url = "/shareholders/"
+  pre = "<i class='bi bi-lock'></i>"
+  name = "shareholders"
+  weight = 30
+
+
+[[menu.main]]
+  url = "/technology/"
+  name = "technology"
+  weight = 35
+
+
+  [[menu.main]]
+  url = "/news"
+  name = "news"
+  identifier="news"
+  weight = 70

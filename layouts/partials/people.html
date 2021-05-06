@@ -1,0 +1,18 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center heading">
+                    <h1 class="pb-4 text-3xl text-white">{{ .Description }}</h1>
+                </div>
+                <ul>
+                    {{ range .Site.Data.peoples }}
+                    <li>
+                        {{ partial "person.html" . }}
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
