@@ -1,7 +1,7 @@
 <div class="flex flex-row py-5 space-x-4">
     <div class="flex flex-col w-2/5 pr1">
         <div class="self-center">
-            <img class="w-48 border-4 border-gray-100 rounded-full shadow-lg" alt="" src="{{ .avatar | absURL }}">
+            <img class="w-48 border-4 border-gray-100 rounded-full shadow-lg" alt="" src="{{ .avatar | relURL }}">
         </div>
         <div class="self-center pt-2">
             <h5 class="text-white">{{ .name }}</h5>

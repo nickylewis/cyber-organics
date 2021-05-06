@@ -46,7 +46,7 @@
   <link href="{{ "css/animate.css" | relURL}}" rel="stylesheet">
 
   <!-- RSS feed -->
-  <link rel="alternate" href="{{ "/index.xml" | absURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
+  <link rel="alternate" href="{{ "/index.xml" | relURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
 
   <!-- Facebook OpenGraph tags -->
   {{ $is_blog := and (eq .Type "blog") (eq .Kind "page") }}
@@ -61,7 +61,7 @@
   <meta property="og:type" content="{{ cond $is_blog "article" "website" }}">
   <meta property="og:url" content="{{ .Permalink }}" />
   <meta property="og:description" content="{{ $description_plain }}">
-  <meta property="og:image" content="{{ $image | absURL }}">
+  <meta property="og:image" content="{{ $image | relURL }}">
   <meta property="og:image:type" content="image/{{ if eq $image_ext ".svg" }}svg+xml{{ else }}{{ trim $image_ext "." }}{{ end }}">
   {{ with .Params.banner_alt }}<meta property="og:image:alt" content="{{ . | markdownify | plainify }}">{{ end }}
   {{ $image_local :=  printf "/static/%s" $image}}
@@ -87,7 +87,7 @@
   {{ with .Param "twitter_site" }}<meta name="twitter:site" content="@{{ . }}">{{ end }}
   <meta name="twitter:title" content="{{ $title_plain | truncate 70 }}">
   {{ if $is_valid_image }}
-  <meta name="twitter:image" content="{{ $image | absURL }}">
+  <meta name="twitter:image" content="{{ $image | relURL }}">
   {{ end }}
   <meta name="twitter:description" content="{{ $description_plain | truncate 200 }}">
   {{ with .Param "twitter_author" }}<meta name="twitter:creator" content="@{{ . }}">{{ end }}

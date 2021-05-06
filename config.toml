@@ -1,7 +1,5 @@
-baseURL = "https://example.org"
+baseURL = "https://nickylewis.github.io/cyber-organics"
 
-#theme = "ananke"
-# disableKinds = ["page", "section", "taxonomy", "term"]
 
 sectionPagesMenu = "main"
 pluralizelisttitles = false
